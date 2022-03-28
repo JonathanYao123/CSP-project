@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "apollo-angular": "^2.4.0",
+    "apollo-server": "^2.22.2",
+    "cors": "^2.8.5",
+    "graphql": "^15.5.0",
+    "mongodb": "^3.6.5",
+    "mongoose": "^5.12.3"
+  },
+  "scripts":{
+    "start": "node app.js"
+  }
+
+}

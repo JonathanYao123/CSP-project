@@ -1,0 +1,67 @@
+<div class="page">
+<div class="header">
+  <div id="title">CSP</div>
+  <div id="subtitle"> A collaborative strategy planner for VALORANT </div>
+</div>
+
+<div class="maps">
+<p>Select Map:</p>
+<button class="btn" (click)="changeMapDisplay('Ascent')">
+  <span class="btn__inner">
+    <span class="btn__slide"></span>
+  <span class="btn__content">Ascent</span>
+</span></button>
+<button class="btn" (click)="changeMapDisplay('Bind')">
+  <span class="btn__inner">
+    <span class="btn__slide"></span>
+  <span class="btn__content">Bind</span>
+</span></button>
+<button class="btn" (click)="changeMapDisplay('Icebox')">
+  <span class="btn__inner">
+    <span class="btn__slide"></span>
+  <span class="btn__content">Icebox</span>
+</span></button>
+<button class="btn" (click)="changeMapDisplay('Haven')">
+  <span class="btn__inner">
+    <span class="btn__slide"></span>
+  <span class="btn__content">Haven</span>
+</span></button>
+<button class="btn" (click)="changeMapDisplay('Split')">
+  <span class="btn__inner">
+    <span class="btn__slide"></span>
+  <span class="btn__content">Split</span>
+</span></button>
+</div>
+<div class="load">
+  <button class="btn" (click)="saveToStorage()">saveToStorage</button>
+  <button class="btn" (click)="loadFromStorage()">Load from storage</button>
+</div>
+<div class="peer">
+  <p>YOUR PEER ID: {{peerId}}</p>
+  <h3 class="peerListHeading">Peer Ids you are connected to:</h3>
+  <ul id="otherPeers" class="otherPeersList"></ul>
+  
+  <div class="container"> 
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="form-group">
+          <label for="form">Connect ID </label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="anotherPeerId" name="anotherPeerId">
+          <button type="submit" class="btn btn-success" >Submit</button>
+        </div>
+      </form>
+  </div>
+</div>
+
+
+<canvas-whiteboard #canvasWhiteboard
+                    [options]="canvasOptions"
+                    (onBatchUpdate)="onCanvasDraw($event)"
+                    (onClear)="onCanvasClear()"
+                    (onUndo)="onCanvasUndo($event)"
+                    (onRedo)="onCanvasRedo($event)">
+</canvas-whiteboard>
+
+<div class="credits">
+  credits: button style from <a href="https://codepen.io/Axiol/pen/mdeyWwQ"> https://codepen.io/Axiol/pen/mdeyWwQ </a>
+</div>
+</div>
